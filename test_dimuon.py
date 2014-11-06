@@ -6,11 +6,19 @@ def test_zero_particles():
     assert len(pairs)==0
 
 def test_one_particle():
-    partciles = [None]
+    particles = [None]
     pairs = find_pairs(particles)
     assert len(pairs)==0
 
 def test_two_particle():
-    partciles = [None,None]
+    particles = [None,None]
     pairs = find_pairs(particles)
     assert len(pairs)==1
+
+
+def test_5_particle():
+    particles = [None,None,None,None,None]
+    pairs = find_pairs(particles)
+    assert len(pairs)==10
+
+
