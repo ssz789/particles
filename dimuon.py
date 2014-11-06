@@ -1,11 +1,20 @@
 from ROOT import TFile, TTree
 
+class FourMomentum:
+    def __init__(self, e,px,py,pz):
+        pass
+    def mass(self):
+        return 0.0
+
 def find_pairs(particles):
     num_particles = len(particles)
     pairs = []
-    for 1_first in xrange (num_particles):
-        for 1_second in xrange(1_first + 1, num_particles):
-            pairs.append(None)
+    for i_first in xrange (num_particles):
+        particle_a = particles[i_first]
+        for i_second in xrange(i_first + 1, num_particles):
+            particle_b = particles[i_second]
+            if particle_a.q + particle_b.q == 0:
+                pairs.append(particle_a, particle_b)
     return pairs
 
 if __name__ == "__main__":
