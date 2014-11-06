@@ -35,3 +35,6 @@ def test_can_create_fourmomentum():
 def test_zero_fourmomentum_has_zero_mass():
     p=FourMomentum(0,0,0,0)
     assert_equal(p.mass(),0.0)
+
+def test_stationary_particles():
+    p=FourMomentum(1.0, 0.0, 0.0)
